@@ -1,0 +1,165 @@
+/* Custom Styles */
+:root {
+  --primary-color: #34353b;
+  --secondary-color: #fec86a;
+  --dark-color: #1e1f23;
+  --light-color: #f8f9fa;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding-top: 56px; /* For fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(52, 53, 59, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+  filter: invert(70%) sepia(96%) saturate(558%) hue-rotate(359deg) brightness(103%) contrast(106%);
+}
+.mobile-profile-img {
+  max-height: 300px; /* Adjust this value for mobile size */
+  width: auto;
+  margin: 0 auto;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+#header {
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.intro span {
+  color: var(--secondary-color);
+}
+
+/* Line Divider */
+.line {
+  height: 3px;
+  width: 100px;
+  background-color: var(--secondary-color);
+  margin: 20px 0;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--secondary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(254, 200, 106, 0.3);
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+  height: 300px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(52, 53, 59, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.portfolio-card:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Contact Cards */
+.contact-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #header {
+      background-image: none;
+      text-align: center;
+  }
+  
+  .intro {
+      text-align: center !important;
+  }
+  
+  .portfolio-card {
+      height: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  #header {
+      background-position: right center;
+  }
+  
+  .portfolio-card {
+      height: 350px;
+  }
+}
